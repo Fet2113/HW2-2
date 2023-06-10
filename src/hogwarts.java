@@ -8,12 +8,15 @@ public class hogwarts {
         this.magic = magic;
         this.transgession = transgession;
     }
+
     public String getName() {
         return name;
     }
+
     public int getMagic() {
         return magic;
     }
+
     public int getTransgession() {
         return transgession;
     }
@@ -28,5 +31,9 @@ public class hogwarts {
 
     public void setTransgession(int transgession) {
         this.transgession = transgession;
+    }
+
+    public int getStudentsPowerMagic() {
+        return magic + transgession;
     }
 }

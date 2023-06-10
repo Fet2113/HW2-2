@@ -1,4 +1,4 @@
-public class Ravenclaw extends hogwarts{
+public class Ravenclaw extends hogwarts {
     private int smart;
     private int wise;
     private int wittyandcreativity;
@@ -20,5 +20,13 @@ public class Ravenclaw extends hogwarts{
 
     public int getWittyandcreativity() {
         return wittyandcreativity;
+    }
+
+    public static Ravenclaw findStudents(String name, Ravenclaw[] ravenclaws) {
+        for (int i = 0; i < ravenclaws.length; i++) {
+            if (name == ravenclaws[i].getName())
+                return ravenclaws[i];
+        }
+        return null;
     }
 }

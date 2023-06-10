@@ -1,4 +1,4 @@
-public class Slytherin extends hogwarts{
+public class Slytherin extends hogwarts {
     private int cunning;
     private int determination;
     private int ambition;
@@ -32,5 +32,13 @@ public class Slytherin extends hogwarts{
 
     public int getThirstforpower() {
         return thirstforpower;
+    }
+
+    public static Slytherin findStudents(String name, Slytherin[] slytherins) {
+        for (int i = 0; i < slytherins.length; i++) {
+            if (name == slytherins[i].getName())
+                return slytherins[i];
+        }
+        return null;
     }
 }

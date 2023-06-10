@@ -1,4 +1,4 @@
-public class Hufflepuff extends hogwarts{
+public class Hufflepuff extends hogwarts {
     private int hardworking;
     private int loyal;
     private int honest;
@@ -9,6 +9,7 @@ public class Hufflepuff extends hogwarts{
         this.loyal = loyal;
         this.honest = honest;
     }
+
     public int getHardworking() {
         return hardworking;
     }
@@ -19,5 +20,13 @@ public class Hufflepuff extends hogwarts{
 
     public int getHonest() {
         return honest;
+    }
+
+    public static Hufflepuff findStudents(String name, Hufflepuff[] hufflepuffs) {
+        for (int i = 0; i < hufflepuffs.length; i++) {
+            if (name == hufflepuffs[i].getName())
+                return hufflepuffs[i];
+        }
+        return null;
     }
 }
