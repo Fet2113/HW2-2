@@ -1,4 +1,4 @@
-public class Hufflepuff extends hogwarts {
+public class Hufflepuff extends Hogwarts {
     private int hardworking;
     private int loyal;
     private int honest;
@@ -8,6 +8,25 @@ public class Hufflepuff extends hogwarts {
         this.hardworking = hardworking;
         this.loyal = loyal;
         this.honest = honest;
+    }
+
+    @Override
+    int calculateSpecificScore() {
+        return this.hardworking + this.loyal + this.honest;
+    }
+
+    @Override
+    void printCompareOfStudents(Hogwarts best, Hogwarts worst) {
+        System.out.println(String.format("%s лучший Пуффендуец, чем %s", best.getName(), worst.getName()));
+    }
+
+    @Override
+    public String toString() {
+        return "Hufflepuff{" +
+                "hardworking" + hardworking +
+                "loyal" + loyal +
+                "honor" + honest +
+                "} " + super.toString();
     }
 
     public int getHardworking() {

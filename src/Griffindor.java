@@ -1,4 +1,4 @@
-public class Griffindor extends hogwarts {
+public class Griffindor extends Hogwarts {
     private int nobility;
     private int honor;
     private int bravery;
@@ -10,8 +10,23 @@ public class Griffindor extends hogwarts {
         this.bravery = bravery;
     }
 
-    public int getStudentsPower() {
-        return nobility + honor + bravery;
+    @Override
+    int calculateSpecificScore() {
+        return this.nobility + this.honor + this.bravery;
+    }
+
+    @Override
+    void printCompareOfStudents(Hogwarts best, Hogwarts worst) {
+        System.out.println(String.format("%s лучший Гриффиндорец, чем %s", best.getName(), worst.getName()));
+    }
+
+    @Override
+    public String toString() {
+        return "Gryffindor{" +
+                "nobility" + nobility +
+                ", honor" + honor +
+                ", bravery" + bravery +
+                "} " + super.toString();
     }
 
     public int getNobility() {

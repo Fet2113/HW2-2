@@ -1,13 +1,35 @@
-public class Ravenclaw extends hogwarts {
+public class Ravenclaw extends Hogwarts {
     private int smart;
     private int wise;
-    private int wittyandcreativity;
+    private int witty;
+    private int creativity;
 
-    public Ravenclaw(String name, int magic, int transgession, int smart, int wise, int wittyandcreativity) {
+    public Ravenclaw(String name, int magic, int transgession, int smart, int wise, int witty, int creativity) {
         super(name, magic, transgession);
         this.smart = smart;
         this.wise = wise;
-        this.wittyandcreativity = wittyandcreativity;
+        this.witty = witty;
+        this.creativity = creativity;
+    }
+
+    @Override
+    int calculateSpecificScore() {
+        return this.smart + this.wise + this.witty + this.creativity;
+    }
+
+    @Override
+    void printCompareOfStudents(Hogwarts best, Hogwarts worst) {
+        System.out.println(String.format("%s лучший Когтевранец, чем %s", best.getName(), worst.getName()));
+    }
+
+    @Override
+    public String toString() {
+        return "Ravenclaw{" +
+                "smart" + smart +
+                "wise" + wise +
+                "witty" + witty +
+                "creativity" + creativity +
+                "} " + super.toString();
     }
 
     public int getSmart() {
@@ -18,8 +40,12 @@ public class Ravenclaw extends hogwarts {
         return wise;
     }
 
-    public int getWittyandcreativity() {
-        return wittyandcreativity;
+    public int getWitty() {
+        return witty;
+    }
+
+    public int getCreativity() {
+        return creativity;
     }
 
     public static Ravenclaw findStudents(String name, Ravenclaw[] ravenclaws) {

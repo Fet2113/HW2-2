@@ -1,4 +1,4 @@
-public class Slytherin extends hogwarts {
+public class Slytherin extends Hogwarts {
     private int cunning;
     private int determination;
     private int ambition;
@@ -12,6 +12,27 @@ public class Slytherin extends hogwarts {
         this.ambition = ambition;
         this.resourcefulness = resourcefulness;
         this.thirstforpower = thirstforpower;
+    }
+
+    @Override
+    int calculateSpecificScore() {
+        return this.cunning + this.determination + this.ambition + this.resourcefulness + this.thirstforpower;
+    }
+
+    @Override
+    void printCompareOfStudents(Hogwarts best, Hogwarts worst) {
+        System.out.println(String.format("%s лучший Слизеринец, чем %s", best.getName(), worst.getName()));
+    }
+
+    @Override
+    public String toString() {
+        return "Slytherin{" +
+                "cunning" + cunning +
+                "determination" + determination +
+                "ambition" + ambition +
+                "resourcefulness" + resourcefulness +
+                "thirstforpower" + thirstforpower +
+                "} " + super.toString();
     }
 
     public int getCunning() {
